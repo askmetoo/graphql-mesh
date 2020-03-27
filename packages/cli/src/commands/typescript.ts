@@ -65,7 +65,7 @@ function buildSignatureBasedOnRootFields(
 
     return `  ${
       field.name
-    }: (args: ${argsName}, context?: ${additionalContextIdentifier}, info?: GraphQLResolveInfo) => Promise<${codegenHelpers.getTypeToUse(
+    }: (args: ${argsName}, context?: ${additionalContextIdentifier} | ${unifiedContextIdentifier}, info?: GraphQLResolveInfo) => Promise<${codegenHelpers.getTypeToUse(
       {
         kind: Kind.NAMED_TYPE,
         name: {
